@@ -82,6 +82,10 @@ Video.propTypes = {
     posterFrameSrc:PropTypes.string.isRequired,
     videoSrc:PropTypes.string.isRequired,
 };
+Video.defaultProps{
+    autoPlay: false,
+    maxLoops: 10,
+}
 export default Video
 ```
 ##模板字符串
