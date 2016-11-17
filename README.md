@@ -1,2 +1,1 @@
-# cnahliu
-Blog
+# 朮厃的日常
