@@ -45,6 +45,7 @@ export default {
       主要作用或影响：
       1.
   */
+  // 在ES6对象中函数可以省略function关键字
   data(){
       return {
         dataString:'text',  
@@ -103,13 +104,20 @@ export default {
     }
   },
   /*
+    类型：Function
+    主要作用或影响：
+    1.是例已经创建完成之后调用。在这一步，实例已完成以下的配置:数据观测(data observer),属性和方法的运算，watch/event事件回调。然而，挂载阶段还没开始，$el属性目前不可见
+  */
+  created:{
+    console.log('component created!')
+  },
+  /*
     类型：Object
     限制：官方建议对于自定义签名遵循[W3C规则](https://www.w3.org/TR/custom-elements/#concepts)
     主要作用或影响：
     1.引用其他功能组件
   */
   components:{
-    
     "nv-header": require('../components/header.vue'),
   }
 }
@@ -119,4 +127,24 @@ export default {
 <!-- -->
 <style lang="less" scoped>
 </style>
+```
+#Vue-router
+前端路由控制
+##在Component组件中的应用
+```Vue
+<script>
+  beforeRouteEnter(to,from,next){
+    console.log('beforeRouteEnter'),
+    getPost(to.params.id, (err, post) => 
+      if (err) {
+        // display some global error message
+        next(false)
+      } else {
+        next(vm => {
+          vm.post = post
+        })
+      }
+    })
+  }
+</script>
 ```
