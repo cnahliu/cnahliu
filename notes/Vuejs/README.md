@@ -5,7 +5,32 @@
 <template>
 	 <!--Vue2.0 只能存在一个根元素，所以通常做法是template下放入一个div做包裹-->
     <div>
-
+        <!--
+          v-show
+        -->
+        <div v-show="dataBool">
+          v-show:根据条件展示元素的选项，适用于简单CSS切换
+        </div>
+        <!--
+          v-if
+        -->        
+        <div v-if="dataBool">
+          v-if:根据条件展示元素的选项，是惰性的，页面一开始渲染时并不会被编译。
+        </div>
+        <!--
+          v-else
+        -->                
+        <div v-else>
+          v-else 根据条件展示元素的选项
+        </div>
+        <!--
+          v-for
+        -->                
+        <ul id="example-1">
+          <li v-for="data in dataArray">
+            {{ data }}
+          </li>
+        </ul>
     </div>
 </template>
 
