@@ -3,6 +3,7 @@
 ##Component组成
 ```Vue
 <template>
+	 <!--Vue2.0 只能存在一个根元素，所以通常做法是template下放入一个div做包裹-->
     <div>
 
     </div>
@@ -24,7 +25,7 @@ export default {
   */
   props:{
       // 只检测类型
-      height:true,
+      height:Number,
       // 检测类型 + 其他验证
       age: {
         //检测类型
@@ -133,6 +134,12 @@ export default {
 ##在Component组件中的应用
 ```Vue
 <script>
+  /* 
+    类型:'function'
+    限制:
+    主要作用或影响：
+    1.当有 vue-devtools, 未命名组件将显示成 <AnonymousComponent>, 这很没有语义。通过提供 name 选项，可以获得更有语义信息的组件树。
+  */
   beforeRouteEnter(to,from,next){
     console.log('beforeRouteEnter'),
     getPost(to.params.id, (err, post) => 

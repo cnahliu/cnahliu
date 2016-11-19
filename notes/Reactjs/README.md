@@ -6,7 +6,7 @@
 
 - ES5
 
-```
+```JSX
 const Video = React.createClass({
     getDefaultProps: function() {
         return {
@@ -33,7 +33,7 @@ export default Video
 ```
 - ES6
 
-```
+```JSX
 class Video extends React.Component {
     constructor(props) {
         super(props);
@@ -65,7 +65,7 @@ export default Video
 ```
 - Stateless function
 
-```
+```JSX
 function Video({
     autoPlay,maxLoops,posterFrameSrc,videoSrc
 }){
@@ -91,12 +91,12 @@ export default Video
 ##模板字符串
 
 模板字符串提供了另一种做字符串组合的方法
-```
+```JSX
 const user = 'world';
 console.log(`hello ${user}`);  // hello world
 ```
 ##注释
-```
+```JavaScript
  /*
     多行注释
  */
@@ -108,7 +108,7 @@ console.log(`hello ${user}`);  // hello world
 state 和 props 主要的区别在于 props 是不可变的，而 state 可以根据与用户交互来改变。这就是为什么有些容器组件需要定义 state 来更新和修改数据。 而子组件只能通过 props 来传递数据。
 ####使用方式
 
-```
+```JSX
 function App(props) {
   return <div>{props.name}</div>;
 }
