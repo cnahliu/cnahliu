@@ -44,7 +44,7 @@ export default {
   */
   name: 'hello',
   /*
-    类型:'string'
+    类型:'Array<string> | Object'
     主要作用或影响：
     1.用于接收来自父组件的数据如类型检测、对象允许配置高级选项,自定义校验和设置默认值。
   */
@@ -53,7 +53,7 @@ export default {
       height:Number,
       // 检测类型 + 其他验证
       age: {
-        //检测类型
+        //检测类型 .String Number Boolean Function Object Array
         type: Number,
         //设定默认值
         default: 0,
@@ -180,3 +180,5 @@ export default {
   }
 </script>
 ```
+###Vuex
+单向数据流
