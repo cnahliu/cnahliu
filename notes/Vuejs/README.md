@@ -154,6 +154,8 @@ export default {
 <style lang="less" scoped>
 </style>
 ```
+#Vue生命周期
+![Vue声明周期](http://img.blog.csdn.net/20160824203433387)
 #Vue-router
 前端路由控制
 ##在Component组件中的应用
@@ -182,3 +184,10 @@ export default {
 ```
 ###Vuex
 单向数据流
+http://192.168.255.133:8080/#/order/1?e=t
+to:
+fullPath:/order/1?e=t
+hash:""
+params:{type:"1"}
+path:"/order/1"
+query:{e:t}

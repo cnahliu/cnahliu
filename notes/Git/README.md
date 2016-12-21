@@ -27,3 +27,42 @@ git revert HEAD
 ```
 git commit --amend
 ```
+##git 忽略文件
+>未添加到版本管理的(git add )
+
+1.	新建.gitignore文件
+2.	在.gitignore添加要忽略的文件
+```
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+```
+>已经添加到版本库的(但本地不想保存源文件)
+
+```
+git rm
+```
+>已经添加到版本库的（本地想保存源文件）
+
+
+```
+git rm --cached 
+```
+>已经添加到版本库的（本地想保存源文件）
+
+忽略文件的更改
+```
+git update-index --assume-unchanged
+```
+恢复对文件的更改
+```
+git update-index --no-assume-unchanged
+```
+
+##git 日志
+
+>对比两个本地仓库(dev)与远程仓库(origin/dev)的具体差别
+
+git diff dev..origin/dev
+git log -p dev..origin/dev

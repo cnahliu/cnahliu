@@ -1,3 +1,11 @@
+##Normalize VS Reset
+1. 保护了有价值的默认值
+2. 修正了一些bug及主流浏览器在渲染上的不一致。
+##display
+> inline-block
+
+ inline-block设置后默认会有4px或8px的间距，通常设置父级的font-size：0来清除间距。
+
 ##box-sizing
 > content-box(default);
 
@@ -123,3 +131,26 @@ normal
   动画正常播放
 alternate
   动画轮流反向播放(更加自然)。
+
+
+##代码片段
+> 通过缩放0.5倍的方式，来让浏览器显示0.5px的边框
+
+
+```less
+.header{
+	positon:relative;
+	&:after{
+		content: '';
+		position: absolute;
+		width: 200%;
+		bottom: 0;
+		left: 0;
+		transform: scale(.5);
+		transform-origin: 0 0;
+		box-sizing: border-box;
+		border-bottom: 1px solid #eee;	
+	}
+}
+```
+> 

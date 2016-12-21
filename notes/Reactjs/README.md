@@ -88,6 +88,9 @@ Video.defaultProps{
 }
 export default Video
 ```
+##React声明周期
+> componentWillMount
+
 ##模板字符串
 
 模板字符串提供了另一种做字符串组合的方法
