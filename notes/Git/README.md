@@ -66,3 +66,21 @@ git update-index --no-assume-unchanged
 
 git diff dev..origin/dev
 git log -p dev..origin/dev
+
+##git 比较对比
+
+>对比当前的工作目录里的，没有 staged(添加到索引中，没有使用`git add`命令的)
+```
+git diff 
+```
+
+>对比当前工作目录与上次提交钱的所有差别
+
+```
+git diff HEAD
+```
+>对比已经暂存起来的文件和上次提交的版本之间的差异(使用`git add`命令的)
+
+```
+git diff –cached
+```
