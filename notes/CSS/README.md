@@ -136,10 +136,9 @@ alternate
 ##代码片段
 > 通过缩放0.5倍的方式，来让浏览器显示0.5px的边框
 
-
 ```less
 .header{
-	positon:relative;
+	position:relative;
 	&:after{
 		content: '';
 		position: absolute;
@@ -153,4 +152,14 @@ alternate
 	}
 }
 ```
-> 
+> CSS实现单行文本溢出显示省略号
+
+```less
+span{
+	width:200px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+```

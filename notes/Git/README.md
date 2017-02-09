@@ -84,3 +84,12 @@ git diff HEAD
 ```
 git diff –cached
 ```
+
+##git 设置输出颜色
+
+```
+git config --global color.status auto  
+git config --global color.diff auto  
+git config --global color.branch auto  
+git config --global color.interactive auto  
+```
