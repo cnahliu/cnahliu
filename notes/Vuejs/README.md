@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  /* 
+  /*
     类型:'string'
     限制:只有作为组件选项时起作用。
     主要作用或影响：
@@ -85,7 +85,7 @@ export default {
       }
   },
   /*
-     类型： [key: string]: Function 
+     类型： [key: string]: Function
      限制：无
      主要作用或影响：
      1.声明组件中事件方法
@@ -161,7 +161,7 @@ export default {
 ##在Component组件中的应用
 ```Vue
 <script>
-  /* 
+  /*
     类型:'function'
     限制:
     主要作用或影响：
@@ -169,7 +169,7 @@ export default {
   */
   beforeRouteEnter(to,from,next){
     console.log('beforeRouteEnter'),
-    getPost(to.params.id, (err, post) => 
+    getPost(to.params.id, (err, post) =>
       if (err) {
         // display some global error message
         next(false)
