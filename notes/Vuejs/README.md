@@ -31,6 +31,13 @@
             {{ data }}
           </li>
         </ul>
+				<!--
+        	router-link
+					tag
+					 	 * a  渲染成某种组件，默认是A标签。
+
+        -->  
+				<router-link to="/foo" tag="li">foo</router-link>
     </div>
 </template>
 
@@ -182,12 +189,3 @@ export default {
   }
 </script>
 ```
-###Vuex
-单向数据流
-http://192.168.255.133:8080/#/order/1?e=t
-to:
-fullPath:/order/1?e=t
-hash:""
-params:{type:"1"}
-path:"/order/1"
-query:{e:t}

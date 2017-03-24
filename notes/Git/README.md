@@ -3,14 +3,27 @@
 ```
 git push --force origin master
 ```
+
+##git 创建空白分支
+```
+git checkout --orphan dev
+git rm -rf .
+```
+##git 删除分支
+```
+git branch -d <branchname>
+```
 ##git pull 与git fetch
+```
 git pull = git fetch + git merge
+```
 ##git回滚
 >修改但未提交(恢复全部)
 
 ```
 git reset --hard HEAD
 ```
+
 
 >修改但未提交(单个文件)
 
@@ -20,7 +33,7 @@ git checkout -- file
 >修改已提交(恢复上次提交)
 
 ```
-git revert HEAD 
+git revert HEAD
 ```
 >修改提交注释
 
@@ -47,7 +60,7 @@ git rm
 
 
 ```
-git rm --cached 
+git rm --cached
 ```
 >已经添加到版本库的（本地想保存源文件）
 
@@ -71,7 +84,7 @@ git log -p dev..origin/dev
 
 >对比当前的工作目录里的，没有 staged(添加到索引中，没有使用`git add`命令的)
 ```
-git diff 
+git diff
 ```
 
 >对比当前工作目录与上次提交钱的所有差别

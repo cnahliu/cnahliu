@@ -16,12 +16,12 @@
 1. 向数组添加向后一个'a',返回数组长度7
 2. 原数组值发生变化:['a','b','c',11,2,3,'aaa']
 
->box.shift() 
+>box.shift()
 
 1. 从数组前端删除一个元素,返回被移除的元素'a'
 2. 原数组值发生变化:['b','c',11,2,3,'aaa']
 
->box.pop() 
+>box.pop()
 
 1. 从数组后端删除一个元素,返回被移除的元素'aaa'
 2. 原数组值发生变化:['b','c',11,2,3]
@@ -36,7 +36,7 @@
 1. 将对数组逆向排序,返回排序后结果[ 3, 2, 11, 'c', 'b', 3, 2, 1 ]
 2. 原数组值发生变化:[ 3, 2, 11, 'c', 'b', 3, 2, 1 ]
 
->box.sort() 
+>box.sort()
 
 1. 对数组进行Unicode码位点(code point)排序,返回排序后结果[ 1, 111, 2, 2, 3, 3, 'b', 'c' ]
 2. 原数组值发生变化:[ 1, 111, 2, 2, 3, 3, 'b', 'c' ]
@@ -87,9 +87,10 @@ function createObject(a,b){
     }
 }
 //
-function 
+function
 ```
 ##Arrow Function(箭头函数)
+
 箭头函数相当于匿名函数，并且简化函数定义，并且它拥有词法作用域的this值（即不会新产生自己作用域下的this。箭头函数有两种格式，一种是只包含一个表达式，连`{}`和`return`都省略掉了，还有一格式可以包含多条语句，这个时候就不能省略{...}和return,
 ```JavaScript
 //单个参表达式
@@ -97,7 +98,7 @@ function
 funciton (x){
 	return x*x;
 }
-//ES6 
+//ES6
 x> x*x
 
 //返回对象
@@ -116,4 +117,66 @@ a=(x,y)=>{return x*y+this.z}
 a(2,3) //8
 
 
+```
+
+##匿名函数(anonymous function)
+
+> 即没有名字的函数，常见于一些只执行一次的函数。
+
+```JavaScript
+var x = function (a, b) {return a * b};
+
+```
+
+##立即执行函数(Immediately-Invoked Function Expression)
+
+```JavaScript
+function(){
+  console.log('666')
+}()
+!function(){
+  console.log('666')
+}()
+
+```
+##闭包(Closure)
+
+> 保护私有变量，避免变量污染
+
+
+```JavaScript
+//一般写法
+var increasing=function(number) {
+  var number = number;
+  return function() {
+    return ++number;
+  }
+}
+var aa=increasing(0)
+aa()
+//结合立即执行函数
+var number=(function() {
+  var number = 1;
+  return {
+    increment: function(){
+      return ++number
+    },
+    decrement: function() {
+      return --number;
+    },
+    get: function() {
+      return number;
+    }
+  }
+})()
+var getNumber=number.get()
+var incrementNumber=number.increment()
+var decrementNumber=number.decrement()
+```
+
+##Tip
+
+```JavaScript
+//开启页面的编辑模式
+document.body.contentEditable='true'; document.designMode='on';
 ```

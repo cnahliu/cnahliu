@@ -4,6 +4,9 @@
 ##flex box
 ```less
 .main{
+    /*
+     * flex
+    */
     display: flex;
     /*
        flex 容器排列方式
@@ -44,6 +47,7 @@
     */
     align-items: stretch;
     /*
+       flex 容器在多行的纵向对齐方式;
      * stretch        纵轴平铺
        flex-start     起始位置对齐
        flex-end       结束位置对齐
@@ -52,6 +56,8 @@
        space-around   平均分布，两端留空。
     */
     align-content:stretch;
+
+
     .item{
       /*
          flex 元素定位顺序 可以为负值
@@ -80,7 +86,7 @@
       */
       flex:0 0 auto;
       /*
-         flex 子元素的简写形式
+         flex 单独在侧轴（纵轴）方向上的对齐方式
        * auto       自动
          flex-start 根据纵轴起始位置
          flex-end   根据纵轴结束位置
