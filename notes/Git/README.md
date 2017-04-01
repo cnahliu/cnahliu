@@ -1,4 +1,6 @@
 #Git
+##git clone指定分支到指定目录
+git clone  -b releases xx.git mobile
 ##git 强制更新忽略冲突
 ```
 git push --force origin master
@@ -39,6 +41,11 @@ git revert HEAD
 
 ```
 git commit --amend
+```
+>删除一些未git add文件或目录
+
+```
+git clean -fd
 ```
 ##git 忽略文件
 >未添加到版本管理的(git add )

@@ -58,10 +58,21 @@
 2. 原数组值发生变化:[ 1, 111, 2, 2, 3, 'new' ]
 
 
-##词法作用域
+##Function
 
-#ECMAScript 6 新特性
-ES6既是一个历史名词，也是一个泛指，含义是5.1版以后的JavaScript的下一代标准，涵盖了ES2015、ES2016、ES2017等等，而ES2015则是正式名称，特指该年发布的正式版本的语言标准。本书中提到“ES6”的地方，一般是指ES2015标准，但有时也是泛指“下一代JavaScript语言”。
+>.call(thisArg,args1,args2)
+
+1. 方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法.
+
+>.apply(thisArg,argsArray)
+
+1.apply() 方法在指定 this 值和参数（参数以数组或类数组对象的形式存在）的情况下调用某个函数。
+
+>.bind(thisArg,argsArray)
+
+1.方法会创建一个新函数。当这个新函数被调用时，bind()的第一个参数将作为它运行时的 this, 之后的一序列参数将会在传递的实参前传入作为它的参数。
+2.ECMAScript 5.1 新增。
+
 
 ##Object
 ```JavaScript
