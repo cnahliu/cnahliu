@@ -1,25 +1,125 @@
 #Git
-##git clone指定分支到指定目录
-git clone  -b releases xx.git mobile
-##git 强制更新忽略冲突
-```
-git push --force origin master
-```
 
-##git 创建空白分支
-```
-git checkout --orphan dev
-git rm -rf .
-```
-##git 删除分支
-```
-git branch -d <branchname>
-```
-##git pull 与git fetch
+##git 创建分支
+
+  1. 初始化当前目录
+
+  ```
+  git init
+  ```
+
+##clone
+
+1. git clone 指定分支
+
+  >git releases 分支到mobile目录下
+
+  ```
+  git clone  -b releases xx.git mobile
+  ```
+
+
+##branch
+
+2. git 创建分支
+
+  > 创建普通分支
+
+  ```sh
+  git checkout -b dev
+  ```
+  >等同于
+
+  ```sh
+  git branch dev
+  git checkout dev
+  ```
+
+  > git 创建空白分支
+
+  ```sh
+  git checkout --orphan dev
+  git rm -rf . //删除一些不必要的问题(直接使用rm -rf 会物理的删除文件)
+  ```
+
+1. git 查看分支
+
+  >查看远程分支
+
+  ```sh
+  git branch -r
+  ```
+
+  >查看所有分支
+
+  ```sh
+  git branch -a
+  ```
+
+1. git 删除分支
+
+  ```
+  git branch -d <branchname>
+  ```
+
+
+##push
+
+1. git 强制push
+
+  ```sh
+  git push --force origin master
+  ```
+##remote
+
+1. 查看当前远程库
+
+  ```
+  git remote -v 
+  ```
+
+2. 添加远程库
+
+  ```
+  git add remote add pd xx.git
+  ```
+
+##subtree(主要作用于多个版本库同时依赖同一个版本库时常用)
+  
+  1. 添加子库
+
+  ```
+  git subtree add --prefix=dist build m  --squash
+  
+  // --prefix 新建的存放目录
+  // build    子库
+  // m        子库分支
+  // --squash 合并所有子库秀至一个提交
+  ```
+  2. 提交更改至子库
+
+  ```
+  git subtree push --prefix=dist build m
+  ```
+
+  3. 从子库更新内容
+  
+  ```
+  git subtree pull --prefix=dist build m  --squash
+  ```
+
+##pull 与fetch
 ```
 git pull = git fetch + git merge
 ```
 ##git回滚
+
+>git 回滚至指定记录(1b174189f9077b53ce0add9989fb4e8206713c6f)
+
+```
+git checkout 1b174189f9077b53ce0add9989fb4e8206713c6f
+```
+
 >修改但未提交(恢复全部)
 
 ```
@@ -32,7 +132,7 @@ git reset --hard HEAD
 ```
 git checkout -- file
 ```
->修改已提交(恢复上次提交)
+>修改已提交(撤销上次提交)
 
 ```
 git revert HEAD
@@ -52,6 +152,7 @@ git clean -fd
 
 1.	新建.gitignore文件
 2.	在.gitignore添加要忽略的文件
+
 ```
 .DS_Store
 node_modules/
@@ -71,7 +172,7 @@ git rm --cached
 ```
 >已经添加到版本库的（本地想保存源文件）
 
-忽略文件的更改
+##忽略文件的更改
 ```
 git update-index --assume-unchanged
 ```
@@ -108,8 +209,8 @@ git diff –cached
 ##git 设置输出颜色
 
 ```
-git config --global color.status auto  
-git config --global color.diff auto  
-git config --global color.branch auto  
-git config --global color.interactive auto  
+git config --global color.status auto
+git config --global color.diff auto
+git config --global color.branch auto
+git config --global color.interactive auto
 ```
