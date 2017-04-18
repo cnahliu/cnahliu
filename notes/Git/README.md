@@ -75,7 +75,7 @@
 1. 查看当前远程库
 
   ```
-  git remote -v 
+  git remote -v
   ```
 
 2. 添加远程库
@@ -85,12 +85,12 @@
   ```
 
 ##subtree(主要作用于多个版本库同时依赖同一个版本库时常用)
-  
+
   1. 添加子库
 
   ```
   git subtree add --prefix=dist build m  --squash
-  
+
   // --prefix 新建的存放目录
   // build    子库
   // m        子库分支
@@ -103,7 +103,7 @@
   ```
 
   3. 从子库更新内容
-  
+
   ```
   git subtree pull --prefix=dist build m  --squash
   ```
@@ -213,4 +213,24 @@ git config --global color.status auto
 git config --global color.diff auto
 git config --global color.branch auto
 git config --global color.interactive auto
+```
+##git 自动转换换行符(push自动CRLF转LF，pull时LF转CRLF)
+
+```
+git config --global core.autocrlf true
+```
+##git 忽略权限配置
+
+```
+git config --global core.filemode false
+```
+
+##git 换行符检测
+
+- flase `不做任何检查`
+- warn `提交时检查并警告`
+- true `提交时检查，如果发现混用则拒绝提交`
+
+```
+git config --global coresafecrlf
 ```
