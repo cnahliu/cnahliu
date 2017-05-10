@@ -120,14 +120,22 @@ git pull = git fetch + git merge
 git checkout 1b174189f9077b53ce0add9989fb4e8206713c6f
 ```
 
->修改但未提交(恢复全部)
+>add但未commit(取消暂存)
 
-```
-git reset --hard HEAD
-```
+  1.取消所有暂存
+
+  ```
+  git reset --hard HEAD
+  ```
+
+  2.取消暂存index.html
+
+  ```
+  git reset --hard index.html
+  ```
 
 
->修改但未提交(单个文件)
+>未add(撤销更改)
 
 ```
 git checkout -- file
